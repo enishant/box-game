@@ -1,2 +1,1 @@
-# box-game
-Box Game
+# Box Game
