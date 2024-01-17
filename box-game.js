@@ -104,6 +104,7 @@ var boxgame = {
         boxgame.scorecard.box++;
         boxgame.random_move();
         boxgame.update_score();
+        boxgame.play_sound(1);
     },
     box_container_click: function() {
         boxgame.scorecard.box_container++;
@@ -115,6 +116,12 @@ var boxgame = {
         html += 'Captures: ' + boxgame.scorecard.box + ', ';
         html += 'Failed: ' + (boxgame.scorecard.box_container - boxgame.scorecard.box) + '';
         document.getElementById('score').innerHTML = html;
+    },
+    play_sound: function(sound) {
+        if(sound != undefined && sound != '') {
+          var audio = new Audio('sounds/' + sound +'.wav');
+          audio.play()
+        }
     }
 }
 boxgame.init();
